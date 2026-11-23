@@ -1,0 +1,6 @@
+-r requirements.txt
+pytest>=8
+pytest-timeout>=2
+ruff>=0.6
+# Optional local semantic embeddings (heavy: installs PyTorch). Set EMBEDDING_PROVIDER=sentence_transformers.
+# sentence-transformers>=3
