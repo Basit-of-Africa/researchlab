@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/* Restrained academic palette: warm paper neutrals, ink-blue accent. */
+:root {
+  --bg: #f7f6f3;
+  --surface: #ffffff;
+  --surface-2: #f1efea;
+  --border: #e2dfd8;
+  --text: #1f2328;
+  --muted: #646a73;
+  --accent: #27476e;
+  --accent-fg: #ffffff;
+  --accent-soft: #e6ecf4;
+  --ok: #2f6b3f;
+  --ok-soft: #e5f0e7;
+  --warn: #8a5a12;
+  --warn-soft: #f7eedc;
+  --danger: #9b2c2c;
+  --danger-soft: #f7e3e3;
+  --ai: #5b3f86;
+  --ai-soft: #efe9f6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15171a;
+    --surface: #1c1f23;
+    --surface-2: #23272c;
+    --border: #2f343a;
+    --text: #e6e6e3;
+    --muted: #9aa0a8;
+    --accent: #8fb3de;
+    --accent-fg: #0f1720;
+    --accent-soft: #1f2c3b;
+    --ok: #7fc08f;
+    --ok-soft: #1d2b21;
+    --warn: #e0b36a;
+    --warn-soft: #2e2617;
+    --danger: #e58b8b;
+    --danger-soft: #331d1d;
+    --ai: #bea2e6;
+    --ai-soft: #2a2236;
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
+  --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-ai: var(--ai);
+  --color-ai-soft: var(--ai-soft);
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+html, body { background: var(--bg); color: var(--text); }
+body { font-family: var(--font-sans); font-size: 14px; line-height: 1.5; }
+::selection { background: var(--accent-soft); }
+.prose-academic { font-family: var(--font-serif); font-size: 16px; line-height: 1.75; }
+.prose-academic p { margin: 0 0 1em; }
+.prose-academic h2 { font-family: var(--font-sans); font-weight: 600; font-size: 15px; margin: 1.4em 0 .5em; }
+mark.flag { background: var(--warn-soft); color: var(--warn); padding: 0 2px; border-radius: 2px; font-weight: 600; }

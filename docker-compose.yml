@@ -1,0 +1,13 @@
+# Local development database (PostgreSQL 16 + pgvector).
+# Usage: docker compose up -d   → postgresql://researchlab:researchlab@localhost:5432/researchlab
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: researchlab
+      POSTGRES_PASSWORD: researchlab
+      POSTGRES_DB: researchlab
+    ports: ["5432:5432"]
+    volumes: ["pgdata:/var/lib/postgresql/data"]
+volumes:
+  pgdata:

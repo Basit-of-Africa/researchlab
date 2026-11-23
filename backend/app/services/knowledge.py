@@ -356,6 +356,7 @@ def document_to_dict(doc: Document, with_versions: bool = False) -> dict:
         "duplicate_of_id": str(doc.duplicate_of_id) if doc.duplicate_of_id else None, "extra": doc.extra,
         "created_at": doc.created_at.isoformat() if doc.created_at else None,
         "updated_at": doc.updated_at.isoformat() if doc.updated_at else None,
+        "deleted_at": doc.deleted_at.isoformat() if doc.deleted_at else None,
     }
     if with_versions:
         d["versions"] = [{

@@ -349,6 +349,7 @@ async def replace_document(doc_id: str, file: UploadFile = File(...), change_not
     job = enqueue(db, user.id, "ingest_document", {"version_id": str(v.id)}, title=f"Process new version: {file.filename}", project_id=d.project_id)
     audit(db, user.id, "document.replace", "document", d.id, project_id=d.project_id, details={"version_no": v.version_no})
     db.commit()
+    db.refresh(d)
     return {"document": knowledge.document_to_dict(d, with_versions=True), "job_id": str(job.id)}
 
 

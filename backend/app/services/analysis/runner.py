@@ -62,7 +62,7 @@ def infer_schema(df: pd.DataFrame) -> list[dict]:
             kind = "numeric (possibly ordinal/categorical)"
         out.append({"name": str(c), "dtype": str(s.dtype), "kind": kind, "n_missing": int(s.isna().sum()),
                     "n_unique": int(s.nunique(dropna=True)),
-                    "example_values": [str(v) for v in s.dropna().unique()[:5]]})
+                    "example_values": [f"{v:.4g}" if isinstance(v, float) else str(v) for v in s.dropna().unique()[:5]]})
     return out
 
 
